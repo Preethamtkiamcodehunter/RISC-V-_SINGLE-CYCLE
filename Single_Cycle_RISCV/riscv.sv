@@ -21,7 +21,7 @@
 
 
 
-module riscv (
+module single_cycle_riscv (
     input  logic        clk,
     input  logic        reset,
     input  logic        stall,
@@ -175,8 +175,8 @@ module riscv (
     // =================================================
 
     // Suppress memory operations when stalled
-    assign mem_write = id_mem_write && !stall;
-    assign mem_read  = id_mem_read  && !stall;
+    assign mem_write = id_mem_write ;
+    assign mem_read  = id_mem_read  ;
 
 
 endmodule
